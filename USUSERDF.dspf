@@ -1,0 +1,57 @@
+     A* =============================================================
+     A* Display: USERID_MASTER_DISPLAY                               
+     A* Short Name: USUSERDF                                         
+     A* DESCRIPTION: USER ID MASTER FILE                             
+     A* DATE: 2026-11-11                                             
+     A* *************************************************************
+     A* AUTHOR         | DATE       | DESCRIPTION                    
+     A* *************************************************************
+     A* DILSON BUENO   | 2026-11-10 | CR-00000 ORIGINAL VERSION      
+     A* *************************************************************
+     A* =============================================================
+     A                                      DSPSIZ(24 80 *DS3)       
+     A                                                               
+     A*                                      DSPSIZ(27 132 *DS4)     
+     A* Header for the display file                                  
+     A          R USUSERH                                            
+     A                                      CA03(03 'EXIT')          
+     A                                      CA12(12 'CANCEL')        
+     A            $$USER        10A  O  1 70                         
+     A            $$DATE        10A  O  2 61                         
+     A            $$TIME         8A  O  2 72                         
+     A                                  1 28'CUSTOMER USER MAINTENANC
+     A                                       DSPATR(HI)              
+     A            $$PROG        10A  O  2  2                         
+                                                                     
+                                                                     
+     A*                                                              
+     A* Details for the display file                                 
+     A          R USUSERD                                            
+     A                                  4  5'Status     :'           
+     A            $$USTAT        1A  B  4 25                         
+     A  30                                  DSPATR(PR)               
+     A  31                                  DSPATR(PC)               
+     A  31                                  DSPATR(RI)               
+     A                                  6  5'User ID    :'           
+     A            $$USRID       20A  B  6 25                         
+     A                                  8  5'Name       :'           
+     A            $$FNAME       50A  B  8 25                         
+     A                                  9  5'Gender     :'           
+     A            $$GNDER       10A  B  9 25                         
+     A                                 10  5'Birth Date :'           
+     A            $$BDATE       10A  B 10 25                         
+     A                                 11  5'Email      :'           
+     A            $$EMAIL       30A  B 11 25                         
+     A*                                                              
+     A* Footer for the display file                                  
+     A          R USUSERF                                            
+     A                                      OVERLAY                  
+     A            $$FKEYS      160     22  1                         
+     A*                                                              
+     A* Message line for the display file                            
+     A          R MSGSFL                    SFL                      
+     A            MSGDTA        79A    24  1                         
+                                                                     
+                                                                     
+                                                                     
+                                                                     
